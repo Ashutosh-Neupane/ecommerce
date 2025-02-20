@@ -47,13 +47,13 @@ export const updateSetting = async (newSetting: ISettingInput) => {
 }
 
 // Server action to update the currency cookie
-export const setCurrencyOnServer = async (newCurrency: string) => {
+export const setCurrencyOnServer = async (newNepaliCurrency: string) => {
   'use server'
   const cookiesStore = await cookies()
-  cookiesStore.set('currency', newCurrency)
+  cookiesStore.set('nepaliCurrency', newNepaliCurrency)
 
   return {
     success: true,
-    message: 'Currency updated successfully',
+    message: 'Nepali currency updated successfully',
   }
 }

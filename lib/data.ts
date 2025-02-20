@@ -5,12 +5,12 @@ import { i18n } from '@/i18n-config'
 
 const users: IUserInput[] = [
   {
-    name: 'John',
+    name: 'ashutosh',
     email: 'admin@example.com',
     password: bcrypt.hashSync('123456', 5),
     role: 'Admin',
     address: {
-      fullName: 'John Doe',
+      fullName: 'AShutosh neupane',
       street: '111 Main St',
       city: 'New York',
       province: 'NY',
@@ -1067,7 +1067,7 @@ const data: Data = {
     {
       title: 'About Us',
       slug: 'about-us',
-      content: `Welcome to [Your Store Name], your trusted destination for quality products and exceptional service. Our journey began with a mission to bring you the best shopping experience by offering a wide range of products at competitive prices, all in one convenient platform.
+      content: `Welcome to Online Pasal, your trusted destination for quality products and exceptional service. Our journey began with a mission to bring you the best shopping experience by offering a wide range of products at competitive prices, all in one convenient platform.
 
 At [Your Store Name], we prioritize customer satisfaction and innovation. Our team works tirelessly to curate a diverse selection of items, from everyday essentials to exclusive deals, ensuring there's something for everyone. We also strive to make your shopping experience seamless with fast shipping, secure payments, and excellent customer support.
 
@@ -1082,7 +1082,7 @@ As we continue to grow, our commitment to quality and service remains unwavering
 **Customer Support**
 For inquiries about orders, products, or account-related issues, contact our customer support team:
 - **Email:** support@example.com
-- **Phone:** +1 (123) 456-7890
+- **Phone:** +977 97393209
 - **Live Chat:** Available on our website from 9 AM to 6 PM (Monday to Friday).
 
 **Head Office**
@@ -1247,11 +1247,11 @@ We also provide helpful resources such as order tracking, product guides, and FA
         freeShippingMinPrice: 35,
         isMaintenanceMode: false,
         defaultTheme: 'Light',
-        defaultColor: 'Gold',
+        defaultColor: '#0070f3',
         pageSize: 9,
       },
       site: {
-        name: 'NxtAmzn',
+        name: 'Online Pasal',
         description:
           'NxtAmzn is a sample Ecommerce website built with Next.js, Tailwind CSS, and MongoDB.',
         keywords: 'Next Ecommerce, Next.js, Tailwind CSS, MongoDB',
@@ -1291,8 +1291,8 @@ We also provide helpful resources such as order tracking, product guides, and FA
       defaultLanguage: 'en-US',
       availableCurrencies: [
         {
-          name: 'United States Dollar',
-          code: 'USD',
+          name: 'Nepali Currency',
+          code: 'Npr',
           symbol: '$',
           convertRate: 1,
         },

@@ -4,31 +4,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
-import useSettingStore from '@/hooks/use-setting-store'
-import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select'
 
-import { SelectValue } from '@radix-ui/react-select'
-import { useLocale, useTranslations } from 'next-intl'
-import { usePathname, useRouter } from '@/i18n/routing'
-import { i18n } from '@/i18n-config'
+import { useTranslations } from 'next-intl'
+
 
 export default function Footer() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const {
-    setting: { site, availableCurrencies, currency },
-    setCurrency,
-  } = useSettingStore()
-  const { locales } = i18n
-
-  const locale = useLocale()
+  
   const t = useTranslations()
+
   return (
-    <footer className='bg-black  text-white underline-link'>
+    <footer className='bg-black text-white underline-link'>
       <div className='w-full'>
         <Button
           variant='ghost'
-          className='bg-gray-800 w-full  rounded-none '
+          className='bg-gray-800 w-full rounded-none'
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <ChevronUp className='mr-2 h-4 w-4' />
@@ -46,7 +35,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href='/page/about-us'>
-                  {t('Footer.About name', { name: site.name })}
+                  {t('Footer.About name', { name: "Online Pasal"})}
                 </Link>
               </li>
             </ul>
@@ -56,7 +45,7 @@ export default function Footer() {
             <ul className='space-y-2'>
               <li>
                 <Link href='/page/sell'>
-                  {t('Footer.Sell products on', { name: site.name })}
+                  {t('Footer.Sell products on', { name: "Online Pasal" })}
                 </Link>
               </li>
               <li>
@@ -95,7 +84,7 @@ export default function Footer() {
             <div className='flex items-center space-x-4 flex-wrap md:flex-nowrap'>
               <Image
                 src='/icons/logo.svg'
-                alt={`${site.name} logo`}
+                alt={`${"Online Pasal"} logo`}
                 width={48}
                 height={48}
                 className='w-14'
@@ -103,56 +92,13 @@ export default function Footer() {
                   maxWidth: '100%',
                   height: 'auto',
                 }}
-              />{' '}
-              <Select
-                value={locale}
-                onValueChange={(value) => {
-                  router.push(pathname, { locale: value })
-                }}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder={t('Footer.Select a language')} />
-                </SelectTrigger>
-                <SelectContent>
-                  {locales.map((lang, index) => (
-                    <SelectItem key={index} value={lang.code}>
-                      <Link
-                        className='w-full flex items-center gap-1'
-                        href={pathname}
-                        locale={lang.code}
-                      >
-                        <span className='text-lg'>{lang.icon}</span> {lang.name}
-                      </Link>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Select
-                value={currency}
-                onValueChange={(value) => {
-                  setCurrency(value)
-                  window.scrollTo(0, 0)
-                }}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder={t('Footer.Select a currency')} />
-                </SelectTrigger>
-                <SelectContent>
-                  {availableCurrencies
-                    .filter((x) => x.code)
-                    .map((currency, index) => (
-                      <SelectItem key={index} value={currency.code}>
-                        {currency.name} ({currency.code})
-                      </SelectItem>
-                    ))}
-                </SelectContent>
-              </Select>
+              />
             </div>
           </div>
         </div>
       </div>
       <div className='p-4'>
-        <div className='flex justify-center  gap-3 text-sm'>
+        <div className='flex justify-center gap-3 text-sm'>
           <Link href='/page/conditions-of-use'>
             {t('Footer.Conditions of Use')}
           </Link>
@@ -160,10 +106,10 @@ export default function Footer() {
           <Link href='/page/help'>{t('Footer.Help')}</Link>
         </div>
         <div className='flex justify-center text-sm'>
-          <p> © {site.copyright}</p>
+          <p> © {"Online Pasal"}</p>
         </div>
         <div className='mt-8 flex justify-center text-sm text-gray-400'>
-          {site.address} | {site.phone}
+          Amrit Science Campus, Thamel | 9844444444
         </div>
       </div>
     </footer>

@@ -6,14 +6,14 @@ import Search from './search'
 import data from '@/lib/data'
 import Sidebar from './sidebar'
 import { getSetting } from '@/lib/actions/setting.actions'
-import { getTranslations } from 'next-intl/server'
+
 
 export default async function Header() {
   const categories = await getAllCategories()
   const { site } = await getSetting()
-  const t = await getTranslations()
+  
   return (
-    <header className='bg-black  text-white'>
+    <header className='bg-[#222222]  text-white'>
       <div className='px-2'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center'>
@@ -25,9 +25,9 @@ export default async function Header() {
                 src={site.logo}
                 width={40}
                 height={40}
-                alt={`${site.name} logo`}
+                alt={`onlinePasal logo`}
               />
-              {site.name}
+              Online Pasal
             </Link>
           </div>
 
@@ -49,7 +49,7 @@ export default async function Header() {
               key={menu.href}
               className='header-button !p-2 '
             >
-              {t('Header.' + menu.name)}
+              {menu.name}
             </Link>
           ))}
         </div>
